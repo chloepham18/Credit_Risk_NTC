@@ -18,7 +18,7 @@ Additionally, the project outlines an NTC Credit Underwriting Model & Strategy t
 ## 🧰 Technologies Used
 
 - Python, Pandas, NumPy, Seaborn, Matplotlib
-- Scikit-learn (Random Forest, Decision Tree, )
+- Scikit-learn (Random Forest, Decision Tree, XGBoost)
 - Google Colab (for code execution)
 - CSV-based data ingestion from Google Drive
 
