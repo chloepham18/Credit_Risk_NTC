@@ -1,4 +1,4 @@
-# 📊 NTC - Full Application: Credit Risk Modeling for New-To-Credit (NTC) Customers
+# 📊 NTC_Consumer_Credit: Credit Risk Modeling for New-To-Credit (NTC) Customers
 
 This project presents a practical data science workflow focusing on exploratory data analysis (EDA) and predictive modeling to assess credit risk for New-To-Credit (NTC) customers. The goal is to build a model that helps financial institutions estimate the likelihood of charge-offs among individuals with little to no prior credit history.
 Additionally, the project outlines an NTC Credit Underwriting Model & Strategy to support risk-based decision-making when approving credit applications from new-to-credit customers.
@@ -55,7 +55,9 @@ The EDA process covers:
 
 ## 🤖 Modeling Approach
 
-We build and evaluate a **Random Forest Classifier** to predict `Ever_ChargeOff`.
+To assess the likelihood of charge-offs among NTC individuals, we implemented supervised learning models with a strong focus on **precision**, aligning with our **startup** business case: expanding market reach while controlling credit risk exposure.
+
+We build and evaluate a **Random Forest Classifier** to predict `Ever_ChargeOff`. 
 
 ### Highlights:
 - Features: 26 engineered and cleaned features
@@ -70,6 +72,30 @@ We build and evaluate a **Random Forest Classifier** to predict `Ever_ChargeOff`
 | AUC             | ~0.95      | ~0.94    |
 | Strategy Focus  | Prioritize precision over recall |
 
+
+## 🔮 Next Steps
+- Compare Random Forest with XGBoost for enhanced precision.
+
+### ✅ Model Comparison & Evaluation
+
+| Metric                | Random Forest | XGBoost  |
+|-----------------------|---------------|----------|
+| **Precision (Val.)**  | **0.667**     | 0.545    |
+| **AUC (Val.)**        | **0.953**     | 0.944    |
+| **Confusion Matrix**  | [[212, 9], [12, 18]] | [[206, 15], [12, 18]] |
+
+**Key Insights**:
+- **Random Forest outperforms XGBoost** in both **precision** and **AUC**, making it a better fit for our risk-averse strategy.
+- Precision of 0.667 means that when the model predicts a customer will default, it is correct ~67% of the time—crucial for cost control.
+- AUC of 0.953 confirms its superior discriminatory power in credit scoring.
+
+---
+
+### 🔍 Threshold Tuning & Business Fit
+
+We intentionally shifted the prediction threshold from the default (0.5) to **0.7** to prioritize **precision over recall**. This approach ensures:
+- Fewer false approvals of risky customers  
+- Better alignment with a **startup’s goal to grow while managing default rates**
 ---
 
 ## 📈 Feature Importance
@@ -84,9 +110,3 @@ Top contributing features include:
 ## 💡 Business Insight
 
 > With a focus on the NTC population (e.g., young adults), this model helps lenders expand their market while managing risk conservatively. A higher precision threshold ensures fewer false positives, retaining more creditworthy new applicants.
-
----
-
-## 🔮 Next Steps
-
-- Compare Random Forest with XGBoost for enhanced precision.
