@@ -1,6 +1,7 @@
 # 📊 NTC - Full Application: Credit Risk Modeling for New-To-Credit (NTC) Customers
 
-This project presents a full-stack data science workflow to analyze, clean, and model credit risk for New-To-Credit (NTC) customers. The objective is to build a predictive model that helps financial institutions assess the likelihood of charge-offs among individuals with little to no prior credit history.
+This project presents a practical data science workflow focusing on exploratory data analysis (EDA) and predictive modeling to assess credit risk for New-To-Credit (NTC) customers. The goal is to build a model that helps financial institutions estimate the likelihood of charge-offs among individuals with little to no prior credit history.
+Additionally, the project outlines an NTC Credit Underwriting Model & Strategy to support risk-based decision-making when approving credit applications from new-to-credit customers.
 
 ---
 
@@ -17,24 +18,9 @@ This project presents a full-stack data science workflow to analyze, clean, and 
 ## 🧰 Technologies Used
 
 - Python, Pandas, NumPy, Seaborn, Matplotlib
-- Scikit-learn (Random Forest, Decision Tree)
+- Scikit-learn (Random Forest, Decision Tree, )
 - Google Colab (for code execution)
 - CSV-based data ingestion from Google Drive
-
----
-
-## 📁 Project Structure
-
-NTC_Full_Application/
-│
-├── eda_ntc_credit.py # Full EDA and preprocessing script
-├── modeling_rf.py # Model training and evaluation
-├── data/
-│ └── v_credit_data_NTC_v51825.csv
-├── figures/
-│ └── *.png # Saved plots (optional)
-├── README.md # This file
-
 
 ---
 
@@ -80,8 +66,8 @@ We build and evaluate a **Random Forest Classifier** to predict `Ever_ChargeOff`
 ### Evaluation Metrics:
 | Metric          | Validation | Test     |
 |-----------------|------------|----------|
-| Precision       | ~0.53      | ~0.53    |
-| AUC             | ~0.76      | ~0.76    |
+| Precision       | ~0.67      | ~0.53    |
+| AUC             | ~0.95      | ~0.94    |
 | Strategy Focus  | Prioritize precision over recall |
 
 ---
@@ -104,25 +90,3 @@ Top contributing features include:
 ## 🔮 Next Steps
 
 - Compare Random Forest with XGBoost for enhanced precision.
-- Add SHAP values for better model explainability.
-- Extend pipeline for real-time scoring or API deployment.
-- Integrate reject inference if available.
-
----
-
-## 📜 License
-
-This project is intended for educational and internal use. Please contact the repository owner for any commercial applications.
-
----
-
-## 🙋‍♂️ Author
-
-**Chau**  
-_Data Science & Credit Risk Analyst_
-
----
-
-## 📬 Contact
-
-Feel free to reach out via [LinkedIn](https://www.linkedin.com) or open an issue in the repo.
